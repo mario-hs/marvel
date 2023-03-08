@@ -1,55 +1,39 @@
 import styles from "./styles.card.module.css";
 
-import Comic1 from "../../../../assets/img/capa1.jpeg";
-import Comic2 from "../../../../assets/img/capa2.jpg";
-import Comic3 from "../../../../assets/img/capa3.jpg";
-import Comic4 from "../../../../assets/img/capa4.jpg";
-import Comic5 from "../../../../assets/img/capa5.jpg";
-// import { Modal } from "../../../../components/Modal";
+import ImgNotFound from "../../../../assets/img/img-not-found.jpg";
 
-const Card = ({ handleModalCallback }) => {
+const Card = ({ handleModalCallback, comics }) => {
   function handleModal() {
     handleModalCallback();
   }
 
   return (
-    <>
-      <article className={styles.comics_wrapper}>
-        <img src={Comic1} alt="comic 1" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-
-      <article className={styles.comics_wrapper}>
-        <img src={Comic2} alt="comic 2" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-
-      <article className={styles.comics_wrapper}>
-        <img src={Comic3} alt="comic 3" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-
-      <article className={styles.comics_wrapper}>
-        <img src={Comic4} alt="comic 4" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-
-      <article className={styles.comics_wrapper}>
-        <img src={Comic5} alt="comic 5" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-
-      <article className={styles.comics_wrapper} onClick={handleModal}>
-        <img src={Comic4} alt="comic 4" />
-        <p>Lorem ipsum dolor sit amet </p>
-        <span>Lorem ipsum</span>
-      </article>
-    </>
+    <ul className={styles.cards_comics}>
+      {comics.map((comic) => {
+        return (
+          <li
+            className={styles.comics_wrapper}
+            key={comic.id}
+            onClick={handleModal}
+          >
+            <img
+              src={
+                comic.thumbnail.path.includes("image_not_available")
+                  ? ImgNotFound
+                  : `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+              }
+              alt={"comic " + comic.title}
+            />
+            <p>{comic.title} </p>
+            <span>
+              {comic.creators.items.length > 0
+                ? comic.creators.items[0].name
+                : ""}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

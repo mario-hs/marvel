@@ -61,13 +61,6 @@ main h2 {
   gap: 5px;
 }
 
-.cards_comics {
-  display: grid;
-  gap: 30px;
-  max-width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-  align-items: stretch; 
-}
 
 .comics_wrapper {
   display: flex;
@@ -113,8 +106,7 @@ main h2 {
 
 .comic_main_background{
   position: relative;
-  background-image: url('../../assets/img/capa.jpg');
-  filter: grayscale(65%);
+  filter: grayscale(75%);
   max-width: 732px;
   height: 500px;
   background-size: cover;
@@ -155,6 +147,10 @@ main h2 {
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 20px;
+  white-space: nowrap;
+  max-width: 25ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reading {
@@ -169,7 +165,7 @@ main h2 {
   width: 100%;
   height: calc(214px - 20px);
   border-radius: 1.4rem;
-  filter: grayscale(65%) blur(2px);
+  filter: grayscale(75%) blur(2px);
   z-index: 0;
   position: absolute;
 }

@@ -4,34 +4,20 @@ import { useContext, useState } from "react";
 export const ApplicationDataContext = createContext();
 
 export function ApplicationDataContextProvider({ children }) {
-  const [leaderboard, setLeaderboard] = useState([]);
-  const [schedule, setSchedule] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [comics, setComics] = useState([]);
 
-  function setScheduleData(data) {
-    setSchedule(data);
-  }
-
-  function setLeaderboardData(data) {
-    setLeaderboard(data);
-  }
-
-  function getScheduleData() {
-    return schedule;
-  }
-
-  function getLeaderboardData() {
-    return leaderboard;
+  function handleData(data) {
+    setComics([...comics, ...data.results]);
+    setOffset(data.offset);
   }
 
   return (
     <ApplicationDataContext.Provider
       value={{
-        setScheduleData,
-        setLeaderboardData,
-        getScheduleData,
-        getLeaderboardData,
-        schedule,
-        leaderboard,
+        handleData,
+        offset,
+        comics,
       }}
     >
       {children}

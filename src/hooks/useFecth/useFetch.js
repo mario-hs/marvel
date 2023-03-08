@@ -1,37 +1,50 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import api from "../../services/ApiMarvel";
+import { useApplicationData } from "../contexts/ApplicationDataContext";
 
-// criando o próprio hook para não ter que ficar poluindo o componente 
-export const useFetch = (url) => {
-    const [data, setData] = useState(null)
-    const [isPeding, setIsPeding] = useState(true)
-    const [error, setError] = useState(null)
+const useFetch = (url) => {
+  //   const [data, setData] = useState(null);
+  const { handleData, comics } = useApplicationData();
 
-    useEffect(() => {
-        const abortCont = new AbortController()
-        setTimeout(() => {
-            fetch(url, {signal: abortCont.signal})
-                .then(res => {
-                    if (!res.ok) {
-                        throw Error('Não foi possível buscar os dados para esse recurso')
-                    }
-                    return res.json()
-                })
-                .then(data => {
-                    setData(data)
-                    setIsPeding(false)
-                    setError(null)
-                }).catch(err => {
-                    if(err.name === 'AbortError'){
-                        console.log('Requisão abortada')
-                    }else {
-                        setError(err.message)
-                        setIsPeding(false)
-                    }
-                })
+  const [isPeding, setIsPeding] = useState(true);
+  const [error, setError] = useState(null);
 
-                return () => abortCont.abort()
-        }, 1000);
-    }, [url])
+  useEffect(() => {
+    const abortCont = new AbortController();
+    setTimeout(() => {
+      api
+        .get(url)
+        .then((res) => {
+          if (res.status !== 200) {
+            throw Error("Não foi possível buscar os dados para esse recurso");
+          }
+          //   setData(res.data.data);
+          handleData(res.data.data);
+          setIsPeding(false);
+          setError(null);
+        })
+        .catch((err) => {
+          if (err.name === "AbortError") {
+            console.log("Requisão abortada");
+          } else {
+            setError(err.message);
+            setIsPeding(false);
+          }
+        });
 
-    return { data, isPeding, error };
-}
+      return () => abortCont.abort();
+    }, 1000);
+  }, [url]);
+
+  if (comics.length > 0) {
+    comics.map((comic, index) => {
+      if (comic.title === "Marvel Previews (2017)") {
+        comics.splice(index, 1);
+      }
+    });
+  }
+
+  return { isPeding, error };
+};
+
+export { useFetch };
