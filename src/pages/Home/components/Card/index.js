@@ -1,10 +1,10 @@
 import styles from "./styles.card.module.css";
 
-import ImgNotFound from "../../../../assets/img/img-not-found.jpg";
+import ImgNotFound2 from "../../../../assets/img/img-not-found-2.jpg";
 
 const Card = ({ handleModalCallback, comics }) => {
-  function handleModal() {
-    handleModalCallback();
+  function handleModal(comicId) {
+    handleModalCallback(comicId);
   }
 
   return (
@@ -14,12 +14,12 @@ const Card = ({ handleModalCallback, comics }) => {
           <li
             className={styles.comics_wrapper}
             key={comic.id}
-            onClick={handleModal}
+            onClick={() => handleModal(comic.id)}
           >
             <img
               src={
                 comic.thumbnail.path.includes("image_not_available")
-                  ? ImgNotFound
+                  ? ImgNotFound2
                   : `${comic.thumbnail.path}.${comic.thumbnail.extension}`
               }
               alt={"comic " + comic.title}

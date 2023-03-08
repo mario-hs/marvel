@@ -9,7 +9,6 @@
 
 .container_modal {
   max-width: 750px;
-  width: 70%;
   background: var(--background-modal);
   margin: auto;
   border-radius: 0.4rem;
@@ -45,7 +44,6 @@
 .cover {
   width: 240px;
   height: 450px;
-  background-image: url('../../assets/img/thanos.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -87,4 +85,70 @@
 .info_container p {
   margin-bottom: 40px;
   font-weight: 300;
+}
+
+.read {
+  background-color: var(--accent-text);
+  color: var(--text-secondary);;
+  max-width: 300px;
+  height: 45px;
+  min-width: 200px;
+  width: 100%;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+
+@media (max-width: 850px) {
+  .container_modal {
+    width: 80%;
+  }
+
+  .cover_wrapper {
+    padding: 0px 40px;
+  }
+
+  .cover_wrapper h1 {
+    font-size: 40px;
+    top: 14px;
+    left: -3px;
+  }
+
+  .content_modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .cover {
+    width: 400px;
+    height: 250px;
+    background-size: contain;
+  }
+
+  .info_container ul {
+    gap: 15px 30px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .cover_wrapper {
+    padding: 0px 0px;
+  }
+
+  .cover {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container_modal {
+    width: 90%;
+    padding-left: 30px;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
 }

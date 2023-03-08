@@ -55,7 +55,7 @@ nav img {
   background-color: var(--accent);
 }
 
-.active a {
+.active a, .active  span {
   color: var(--text-secondary)
 }
 

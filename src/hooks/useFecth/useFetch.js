@@ -3,7 +3,7 @@ import api from "../../services/ApiMarvel";
 import { useApplicationData } from "../contexts/ApplicationDataContext";
 
 const useFetch = (url) => {
-  //   const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
   const { handleData, comics } = useApplicationData();
 
   const [isPeding, setIsPeding] = useState(true);
@@ -18,8 +18,15 @@ const useFetch = (url) => {
           if (res.status !== 200) {
             throw Error("Não foi possível buscar os dados para esse recurso");
           }
-          //   setData(res.data.data);
-          handleData(res.data.data);
+          switch (url) {
+            case "/comics":
+              handleData(res.data.data);
+              break;
+            case `/comics/${url.match(/[0-9]+/gm)}`:
+              setData(res.data.data.results);
+              break;
+          }
+
           setIsPeding(false);
           setError(null);
         })
@@ -44,7 +51,7 @@ const useFetch = (url) => {
     });
   }
 
-  return { isPeding, error };
+  return { data, isPeding, error };
 };
 
 export { useFetch };

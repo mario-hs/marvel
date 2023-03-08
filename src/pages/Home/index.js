@@ -13,9 +13,11 @@ import { useApplicationData } from "../../hooks/contexts/ApplicationDataContext"
 const Home = () => {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
+  const [comicId, setComicId] = useState(null);
   const { comics } = useApplicationData();
 
-  function handleModal() {
+  function handleModal(id) {
+    setComicId(id);
     open ? setOpen(false) : setOpen(true);
   }
 
@@ -100,7 +102,11 @@ const Home = () => {
               <Card handleModalCallback={handleModal} comics={comics}></Card>
             </section>
           </main>
-          {open === false ? <></> : <Modal handleModalCallback={handleModal} />}
+          {open === false ? (
+            <></>
+          ) : (
+            <Modal handleModalCallback={handleModal} id={comicId} />
+          )}
         </>
       )}
     </>

@@ -6,8 +6,8 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: var(--text-primary);
   list-style: none;
+  color: var(--text-primary);
 }
 
 .container {
