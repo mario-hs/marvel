@@ -3,8 +3,15 @@ import { BookmarksSimple, GearSix, House } from "@phosphor-icons/react";
 import LogoBig from "../../../../assets/img/logo-marvel-big.svg";
 import LogoSmall from "../../../../assets/img/logo-marvel-small.svg";
 import styles from "./styles.header.module.css";
+import { useState } from "react";
 
 const Header = () => {
+  const [active, setActive] = useState("home");
+
+  function handleClick(e) {
+    setActive(e);
+  }
+
   return (
     <header>
       <img
@@ -19,21 +26,33 @@ const Header = () => {
       />
       <nav>
         <div className={styles.nav_top}>
-          <div className={`${styles.active} ${styles.nav_button}`}>
-            <Link>
+          <div
+            className={`${active === "home" ? styles.active : ""} ${
+              styles.nav_button
+            }`}
+          >
+            <Link onClick={() => handleClick("home")}>
               <House size={24} color="var(--text-secondary)" weight="duotone" />
               <span>Página Inicial</span>
             </Link>
           </div>
-          <div className={styles.nav_button}>
-            <Link>
+          <div
+            className={`${active === "favourite" ? styles.active : ""} ${
+              styles.nav_button
+            }`}
+          >
+            <Link onClick={() => handleClick("favourite")}>
               <BookmarksSimple size={24} weight="duotone" />
               <span>Favoritos</span>
             </Link>
           </div>
         </div>
-        <div className={styles.nav_button}>
-          <Link>
+        <div
+          className={`${active === "settings" ? styles.active : ""} ${
+            styles.nav_button
+          }`}
+        >
+          <Link onClick={() => handleClick("settings")}>
             <GearSix size={24} weight="duotone" />
             <span>Configuração</span>
           </Link>
