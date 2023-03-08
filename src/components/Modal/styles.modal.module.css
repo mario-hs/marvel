@@ -16,7 +16,7 @@
   display: grid;
   grid-template-rows: 24px 1fr;
   place-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 20px;
   gap: 20px;
 }
@@ -45,7 +45,7 @@
 .cover {
   width: 240px;
   height: 450px;
-  background-image: url('../../assets/thanos.jpeg');
+  background-image: url('../../assets/img/thanos.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -56,7 +56,7 @@
 }
 
 .info_container h2{
-  color: var(--background);
+  color: var(--text-modal);
   font-size: 14px;
   font-weight: 300px;
 }
@@ -75,13 +75,13 @@
 }
 
 .info_container span{
-  color: var(--background);
+  color: var(--text-modal);
   font-weight: 300;
   font-size: 12px;
 }
 
 .info_container h2, p{
-  color: var(--background);
+  color: var(--text-modal);
 }
 
 .info_container p {

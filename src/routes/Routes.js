@@ -1,9 +1,4 @@
-import {
-  BrowserRouter,
-  Route,
-  //  Switch,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Setting } from "../pages/Setting";
 import { Favourite } from "../pages/Favourite";

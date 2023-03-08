@@ -1,16 +1,14 @@
-import { Footer } from "../../components/Footer";
-
 import styles from "./styles.home.module.css";
 
-import User from "../../assets/user.png";
+import User from "../../assets/img/user.png";
 
 // import BackgroundComic from "../../assets/reading.jpg";
 
 import { Bell, MagnifyingGlass, Moon, SunDim } from "@phosphor-icons/react";
-import { useTheme } from "../../contexts/ThemeContext";
-import { Card } from "../../components/Card";
+import { useTheme } from "../../hooks/contexts/ThemeContext";
+import { Card } from "./components/Card";
 import { Modal } from "../../components/Modal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Home = () => {
   const { theme, toggleTheme } = useTheme();
@@ -90,7 +88,7 @@ const Home = () => {
           <Card handleModalCallback={handleModal}></Card>
         </section>
       </main>
-      {open ? <></> : <Modal handleModalCallback={handleModal} />}
+      {open === false ? <></> : <Modal handleModalCallback={handleModal} />}
     </>
   );
 };

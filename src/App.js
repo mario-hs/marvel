@@ -1,5 +1,5 @@
-import { ApplicationDataContextProvider } from "./contexts/ApplicationDataContext";
-import { ThemeContext, ThemeContextProvider } from "./contexts/ThemeContext";
+import { ApplicationDataContextProvider } from "./hooks/contexts/ApplicationDataContext";
+import { ThemeContextProvider } from "./hooks/contexts/ThemeContext";
 import { Router } from "./routes/Routes";
 
 function App() {

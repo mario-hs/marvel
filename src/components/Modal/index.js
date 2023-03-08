@@ -11,7 +11,7 @@ const Modal = ({ handleModalCallback }) => {
       <div className={styles.container_modal}>
         <X
           size={24}
-          color="var(--background)"
+          color="var(--text-modal)"
           onClick={handleModal}
           cursor="pointer"
         />

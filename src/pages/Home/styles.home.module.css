@@ -113,7 +113,7 @@ main h2 {
 
 .comic_main_background{
   position: relative;
-  background-image: url('../../assets/capa.jpg');
+  background-image: url('../../assets/img/capa.jpg');
   filter: grayscale(65%);
   max-width: 732px;
   height: 500px;
@@ -163,7 +163,7 @@ main h2 {
 }
 
 .reading_info_background {
-  background-image: url('../../assets/reading.jpg');
+  background-image: url('../../assets/img/reading.jpg');
   background-size: cover;
   max-width: 370px;
   width: 100%;

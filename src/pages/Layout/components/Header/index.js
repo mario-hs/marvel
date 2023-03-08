@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BookmarksSimple, GearSix, House } from "@phosphor-icons/react";
-import LogoBig from "../../assets/logo-marvel-big.svg";
-import LogoSmall from "../../assets/logo-marvel-small.svg";
+import LogoBig from "../../../../assets/img/logo-marvel-big.svg";
+import LogoSmall from "../../../../assets/img/logo-marvel-small.svg";
 import styles from "./styles.header.module.css";
 
 const Header = () => {

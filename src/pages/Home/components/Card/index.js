@@ -1,11 +1,11 @@
 import styles from "./styles.card.module.css";
 
-import Comic1 from "../../assets/capa1.jpeg";
-import Comic2 from "../../assets/capa2.jpg";
-import Comic3 from "../../assets/capa3.jpg";
-import Comic4 from "../../assets/capa4.jpg";
-import Comic5 from "../../assets/capa5.jpg";
-import { Modal } from "../Modal";
+import Comic1 from "../../../../assets/img/capa1.jpeg";
+import Comic2 from "../../../../assets/img/capa2.jpg";
+import Comic3 from "../../../../assets/img/capa3.jpg";
+import Comic4 from "../../../../assets/img/capa4.jpg";
+import Comic5 from "../../../../assets/img/capa5.jpg";
+// import { Modal } from "../../../../components/Modal";
 
 const Card = ({ handleModalCallback }) => {
   function handleModal() {

@@ -1,6 +1,7 @@
 [data-theme='dark'] {
   --background: #1D1D2A;
   --background-modal: #FBFBFB;
+  --text-modal: #1D1D2A;
   --text-primary: #EFF0F9;
   --text-secondary: #FBFBFB;
   --accent-text: #4C82F6;
