@@ -1,0 +1,90 @@
+.modal_wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  background: rgba(44, 43, 60, 0.45);
+  display: flex;
+}
+
+.container_modal {
+  max-width: 750px;
+  width: 70%;
+  background: var(--background-modal);
+  margin: auto;
+  border-radius: 0.4rem;
+  display: grid;
+  grid-template-rows: 24px 1fr;
+  place-items: flex-end;
+  justify-content: end;
+  padding: 20px;
+  gap: 20px;
+}
+
+.content_modal {
+  display: grid;
+  grid-template-columns: 410px 1fr;
+  position: relative;
+  place-content: flex-end;
+}
+
+.cover_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cover_wrapper h1 {
+  font-size: 74px;
+  color: var(--accent);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.cover {
+  width: 240px;
+  height: 450px;
+  background-image: url('../../assets/thanos.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.info_container {
+  height: min-content;
+  padding: 40px 20px 0px 0px;
+}
+
+.info_container h2{
+  color: var(--background);
+  font-size: 14px;
+  font-weight: 300px;
+}
+
+.info_container ul {
+  display: grid;
+  gap: 10px;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  align-items: stretch;
+}
+
+.info_container ul li{
+  display: flex;
+  flex-direction: column;
+}
+
+.info_container span{
+  color: var(--background);
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.info_container h2, p{
+  color: var(--background);
+}
+
+.info_container p {
+  margin-bottom: 40px;
+  font-weight: 300;
+}

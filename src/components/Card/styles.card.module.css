@@ -1,0 +1,27 @@
+
+.comics_wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 155px;
+  cursor: pointer;
+}
+
+.comics_wrapper p .comics_wrapper span {
+  font-size: 16px;
+  white-space: pre-line;
+}
+
+.comics_wrapper p {
+  color: var(--accent-text);
+}
+
+.comics_wrapper span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.comics_wrapper img{
+  max-width: 155px;
+  height: 242px;
+  border-radius: 0.5rem;
+}
