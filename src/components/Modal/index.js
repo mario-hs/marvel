@@ -2,10 +2,10 @@ import styles from "./styles.modal.module.css";
 import ImgNotFound from "../../assets/img/img-not-found.jpg";
 
 import { X } from "@phosphor-icons/react";
-import { useFetch } from "../../hooks/useFecth/useFetch";
+import { UseFetch } from "../../hooks/useFecth/UseFetch";
 
 const Modal = ({ handleModalCallback, id }) => {
-  const { data: comic, error, isPeding } = useFetch(`/comics/${id}`);
+  const { data: comic, error, isPeding } = UseFetch(`/comics/${id}`);
 
   function handleModal() {
     handleModalCallback();

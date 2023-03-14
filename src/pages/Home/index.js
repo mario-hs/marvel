@@ -6,8 +6,7 @@ import { Bell, MagnifyingGlass, Moon, SunDim } from "@phosphor-icons/react";
 import { useTheme } from "../../hooks/contexts/ThemeContext";
 import { Card } from "./components/Card";
 import { Modal } from "../../components/Modal";
-import { useEffect, useState } from "react";
-import { useFetch } from "../../hooks/useFecth/useFetch";
+import { useState } from "react";
 import { useApplicationData } from "../../hooks/contexts/ApplicationDataContext";
 
 const Home = () => {
@@ -81,13 +80,13 @@ const Home = () => {
                   <div className={styles.reading_info}>
                     <p>{comics[1].title}</p>
 
-                    <button>Continuar lendo</button>
+                    <button>Ler</button>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h2>Heroís Favoritos</h2>
+                <h2>Heróis Favoritos</h2>
                 <article className={styles.favourites}>
                   <div></div>
                   <div></div>
@@ -99,8 +98,13 @@ const Home = () => {
 
             <h2>Quadrinhos</h2>
             <section>
-              <Card handleModalCallback={handleModal} comics={comics}></Card>
+              <Card
+                handleModalCallback={handleModal}
+                // firstComics={comics}
+              ></Card>
             </section>
+
+            {/* <button></button> */}
           </main>
           {open === false ? (
             <></>

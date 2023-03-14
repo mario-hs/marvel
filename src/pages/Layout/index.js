@@ -7,14 +7,12 @@ import { useTheme } from "../../hooks/contexts/ThemeContext";
 import styles from "../../assets/css/styles.module.css";
 import "../../assets/css/light.module.css";
 import "../../assets/css/dark.module.css";
-import { useFetch } from "../../hooks/useFecth/useFetch";
-import { useApplicationData } from "../../hooks/contexts/ApplicationDataContext";
+import { UseFetch } from "../../hooks/useFecth/UseFetch";
 
 const Layout = () => {
   const { theme } = useTheme();
-  // const { comics } = useApplicationData();
 
-  const { error, isPeding } = useFetch(`/comics`);
+  const { error, isPeding } = UseFetch(`/comics`);
   return (
     // <div id={theme} className={styles.container}>
     <div data-theme={theme} className={styles.container}>

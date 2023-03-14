@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import api from "../../services/ApiMarvel";
 import { useApplicationData } from "../contexts/ApplicationDataContext";
 
-const useFetch = (url) => {
+const UseFetch = (url) => {
   const [data, setData] = useState(null);
-  const { handleData, comics } = useApplicationData();
+  const { handleData } = useApplicationData();
 
   const [isPeding, setIsPeding] = useState(true);
   const [error, setError] = useState(null);
@@ -43,15 +43,7 @@ const useFetch = (url) => {
     }, 1000);
   }, [url]);
 
-  if (comics.length > 0) {
-    comics.map((comic, index) => {
-      if (comic.title === "Marvel Previews (2017)") {
-        comics.splice(index, 1);
-      }
-    });
-  }
-
   return { data, isPeding, error };
 };
 
-export { useFetch };
+export { UseFetch };
