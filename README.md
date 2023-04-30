@@ -16,7 +16,7 @@
 ## 🔖 Layout
 
 <h1 align="center">
-    <img alt="Marvel" src="https://github.com/mario-hs/marvel/blob/main/cover.png" width="500px" />
+    <img alt="Marvel" src="https://github.com/mario-hs/marvel/blob/main/cover.png" />
 </h1>
 
 ## 🧪 Tecnologias
